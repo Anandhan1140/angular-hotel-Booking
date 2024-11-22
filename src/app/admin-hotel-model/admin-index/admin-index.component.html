@@ -1,0 +1,26 @@
+<!-- hotel-search.component.html -->
+<div class="row mb-4 d-flex justify-content-center">
+    <div class="col-md-6">
+      <form (ngSubmit)="onSearch()" [formGroup]="search_Form">
+        <div class="input-group">
+          <select formControlName="search_City" class="form-control" id="searchCityDropdown">
+            <option value="" disabled selected>Around the globe</option>
+            <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
+          </select>
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <p class="d-flex justify-content-center" *ngIf="isAdmin">
+    <a class="btn btn-outline-light" routerLink="/admin-create-edit">Create New</a>
+</p>
+
+
+
+
+

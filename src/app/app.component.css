@@ -1,0 +1,53 @@
+
+/*for navbar list*/
+@media (min-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 1.1rem; /* Standard font size for larger screens */
+    }
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;   
+    overflow-y: auto; /* Ensure vertical scroll */
+}
+
+body{
+    background-color: lightblue; /* Only shows if content fills the height */
+}
+
+header {
+    position: relative; /* Ensure the header does not take full height */
+    z-index: 1; /* Maintain stacking context */
+}
+
+.container {
+    padding: 20px; /* Optional padding for main content */
+}
+
+
+.navbar-collapse {
+    display: flex; /* Use Flexbox */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+}
+
+.navbar-nav {
+    display: flex; /* Use Flexbox for the nav items */
+    flex-grow: 1; /* Allow the nav items to grow */
+    justify-content: flex-start; /* Align items to the end */
+}
+
+footer {
+    display: flex; /* Use Flexbox for the footer */
+    flex-direction: column; /* Stack items vertically */
+}
+
+footer .row {
+    display: flex; /* Use Flexbox for the row */
+    justify-content: space-between; /* Space items evenly */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+

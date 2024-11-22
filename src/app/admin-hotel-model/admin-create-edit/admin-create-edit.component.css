@@ -1,0 +1,27 @@
+.is-invalid input {
+    border-color: red;
+  }
+  .is-valid input {
+    border-color: green;
+  }
+
+
+  /* Set the selected value in black */
+.ng-select .ng-select-container {
+    color: white; /* Color for the selected option */
+  }
+  
+  /* Ensure options are displayed in white */
+  .ng-option {
+    color: white; /* Color for the options */
+  }
+  
+  /* Optional: Change background color for better visibility */
+  .ng-select {
+    background-color:white; /* Dark background for contrast */
+  }
+
+  /* Specific styles for ng-select options */
+.ng-select .ng-option {
+    color: white !important; /* Ensure it overrides other styles */
+  }

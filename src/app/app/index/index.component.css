@@ -1,0 +1,110 @@
+.big-heading {
+    font-size: 4rem; /* Adjust for the desired size */
+    font-family: 'Arial', sans-serif; /* Change to your preferred font family */
+    line-height: 1.2; /* Better spacing */
+}
+
+.small-paragraph {
+    font-size: 1.5rem; /* Smaller size for the paragraph */
+    font-family: 'Georgia', serif; /* Change to your preferred font family */
+}
+
+@media (max-width: 992px) {
+    .big-heading {
+        font-size: 2.5rem; /* Adjust for medium screens */
+    }
+
+    .small-paragraph {
+        font-size: 1.2rem; /* Smaller font size on mobile */
+    }
+}
+
+
+/*testimonal*/
+
+
+.testimonials-section {
+    padding: 60px 0;
+}
+
+.testimonial-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: burlywood;    
+}
+.section-title span{
+    color: burlywood;   
+}
+
+.heading{
+    color: #f9f9f9;
+}
+
+/*about us section*/
+
+
+.aboutus-section {
+    color: white;
+}
+.about-title {
+  
+    margin-bottom: 10px;
+    color: burlywood;    
+}
+.about-heading{
+    color: burlywood;    
+}
+
+.f-para,
+.s-para {
+    font-size: 1rem; /* Adjust as needed */
+    margin-bottom: 15px;
+    color: white;
+}
+.about-btn {
+    
+    color: burlywood; /* Text color for the button */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: underline;
+    background: repeating-radial-gradient(black, transparent 100px);
+}
+.about-btn:hover {
+    background-color: #f8f9fa; /* Lighten on hover */
+}
+.about-pic img {
+    width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/*services*/
+.services{
+ 
+    margin-top: 90px;
+}
+
+.service_heading{
+    color: burlywood;    
+}
+
+/*hover*/
+.service-image {
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.service-image:hover {
+    transform: scale(1.05); /* Scale the image on hover */
+    filter: brightness(85%); /* Optional: darken the image slightly */
+}
