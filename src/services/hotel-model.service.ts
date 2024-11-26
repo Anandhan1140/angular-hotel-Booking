@@ -10,8 +10,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class HotelModelService {
 
-  private myApp_Url ='https://localhost:7239/api/Auth';
-  private Admin_Url = 'https://localhost:7239/api/Admin'
+  private myApp_Url ='https://localhost:7290/api/Auth';
+  private Admin_Url = 'https://localhost:7290/api/Admin'
   apiUrl: any;
 
 

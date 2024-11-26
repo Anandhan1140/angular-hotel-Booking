@@ -8,7 +8,7 @@ import { Country, District, HotelFacility, State } from 'src/Models/dropdown';
 })
 export class DropdownService {
 
-  private myAppUrl = 'https://localhost:7239/api/Dropdown';
+  private myAppUrl = 'https://localhost:7290/api/Dropdown';
 
   constructor(private _http:HttpClient){} 
 

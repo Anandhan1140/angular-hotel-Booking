@@ -1,98 +1,69 @@
   <form [formGroup]="admin_Create_hotel" (ngSubmit)="onSubmit()">
 
-    <ng-container *ngIf="admin_Create_hotel.get('HotelName') as hotelNameControl">
-      <ng-template #hotelNameTemplate>
-        <div [ngClass]="{'form-field col-lg-6': true,
-        'is-invalid': hotelNameControl.invalid && (hotelNameControl.touched || hotelNameControl.dirty),
-        'is-valid': hotelNameControl.valid && (hotelNameControl.touched || hotelNameControl.dirty)}">
-          <label [ngStyle]="{'color':'white'}" for="HotelName" class="control-label">Hotel Name</label>          
+    <div class="row mb-3">
+      <ng-container *ngIf="admin_Create_hotel.get('HotelName') as hotelNameControl">
+        <div class="col-lg-6">
+          <label [ngStyle]="{'color':'white'}" for="HotelName" class="control-label">Hotel Name</label>
           <input type="text" formControlName="HotelName" class="form-control" />
-          
-          <span *ngIf="hotelNameControl.invalid && 
-                       (hotelNameControl.touched || 
-                       hotelNameControl.dirty)" 
-                class="text-danger">
-            <span *ngIf="hotelNameControl.errors?.['required']" 
-                  [ngStyle]="{'color': 'red'}">
+          <span *ngIf="hotelNameControl.invalid && (hotelNameControl.touched || hotelNameControl.dirty)" class="text-danger">
+            <span *ngIf="hotelNameControl.errors?.['required']" [ngStyle]="{'color': 'red'}">
               Hotel Name is required.
             </span>
           </span>
         </div>
-      </ng-template>
-    
-      <ng-container *ngTemplateOutlet="hotelNameTemplate"></ng-container>
-    </ng-container>
-
-
-    <ng-container *ngIf="admin_Create_hotel.get('PhoneNo') as hotel_phone_control">  
-      <ng-template #hotel_phone_template>
-        <div [ngClass]="{'form-field col-lg-6': true}">
-          <label [ngStyle]="{'color':'white'}" for="PhoneNo" class="control-label">phone number</label>
+      </ng-container>
+ 
+  
+    <!-- Phone Number -->
+  
+      <ng-container *ngIf="admin_Create_hotel.get('PhoneNo') as hotel_phone_control">
+        <div class="col-lg-6">
+          <label [ngStyle]="{'color':'white'}" for="PhoneNo" class="control-label">Phone Number</label>
           <input type="text" formControlName="PhoneNo" class="form-control" />
-          <span *ngIf="hotel_phone_control.invalid &&
-                      (hotel_phone_control.touched ||
-                      hotel_phone_control.dirty)"
-                      class="text-danger">                 
-       
-          <span *ngIf="hotel_phone_control.errors?.['required']"
-                        [ngStyle]="{'color':'red'}">
-                hotel_phone_no is required
+          <span *ngIf="hotel_phone_control.invalid && (hotel_phone_control.touched || hotel_phone_control.dirty)" class="text-danger">
+            <span *ngIf="hotel_phone_control.errors?.['required']" [ngStyle]="{'color':'red'}">
+              Hotel phone number is required.
+            </span>
           </span>
-        </span> 
         </div>
-      </ng-template>
-      <ng-container *ngTemplateOutlet="hotel_phone_template"></ng-container>
-    </ng-container>
-
-
-    <ng-container *ngIf="admin_Create_hotel.get('Email') as hotel_email">  
-      <ng-template #hotel_email_template>
-        <div [ngClass]="{'form-field col-lg-6': true}">
+      </ng-container>
+    </div>
+  
+    <!-- Email Address -->
+    <div class="row mb-3">
+      <ng-container *ngIf="admin_Create_hotel.get('Email') as hotel_email">
+        <div class="col-lg-6">
           <label [ngStyle]="{'color':'white'}" for="Email" class="control-label">Email Address</label>
           <input type="text" formControlName="Email" class="form-control" />
-          <span *ngIf="hotel_email.invalid &&
-                      (hotel_email.touched ||
-                      hotel_email.dirty)"
-                      class="text-danger">               
-                   
-                 <span *ngIf="hotel_email.errors?.['required']"
-                        [ngStyle]="{'color':'red'}">
-                Email address is required
+          <span *ngIf="hotel_email.invalid && (hotel_email.touched || hotel_email.dirty)" class="text-danger">
+            <span *ngIf="hotel_email.errors?.['required']" [ngStyle]="{'color':'red'}">
+              Email address is required.
+            </span>
           </span>
-        </span>
         </div>
-      </ng-template>
-      <ng-container *ngTemplateOutlet="hotel_email_template"></ng-container>
-    </ng-container>
-
-    
-    <ng-container *ngIf="admin_Create_hotel.get('CountryId') as countryControl">
-      <div [ngClass]="{'form-field col-lg-6': true}">
-      <label [ngStyle]="{'color':'white'}" for="country" class="control-label">Country</label>
-      <ng-select  id="country" class="form-select"
-        [searchable]="true"
-        formControlName="CountryId"      
-        (change)="onCountryChange()"
-       >       
-      <!-- Placeholder as the first option -->
-      <ng-option  value="" selected>
-        Select a country
-      </ng-option>
-        <ng-option  *ngFor="let option of country_dropdown_List" [value]="option.countryId | number">
-          {{ option.countryName }}
-        </ng-option>
-      </ng-select>
-      <span *ngIf="countryControl.invalid && 
-                    (countryControl.touched || countryControl.dirty)" 
-            class="text-danger">
-          Country is required.
-      </span>
-      </div>
-    </ng-container>
-
-    
+      </ng-container>
+  
+    <!-- Country -->
+   
+      <ng-container *ngIf="admin_Create_hotel.get('CountryId') as countryControl">
+        <div class="col-lg-6">
+          <label [ngStyle]="{'color':'white'}" for="country" class="control-label">Country</label>
+          <ng-select id="country" class="form-select" [searchable]="true" formControlName="CountryId" (change)="onCountryChange()">
+            <ng-option value="" selected>Select a country</ng-option>
+            <ng-option *ngFor="let option of country_dropdown_List" [value]="option.countryId | number">
+              {{ option.countryName }}
+            </ng-option>
+          </ng-select>
+          <span *ngIf="countryControl.invalid && (countryControl.touched || countryControl.dirty)" class="text-danger">
+            Country is required.
+          </span>
+        </div>
+      </ng-container>
+    </div>
+  
+    <div class="row mb-3">
     <ng-container *ngIf="admin_Create_hotel.get('StateId') as stateControl">
-      <div [ngClass]="{'form-field col-lg-6': true}">
+      <div class="col-lg-6">    
         <label [ngStyle]="{'color':'white'}" for="state" class="control-label">State</label>
         <ng-select id="state" class="form-select"
           [searchable]="true"
@@ -112,11 +83,12 @@
               class="text-danger">
           State is required.
         </span>
-      </div>
+      </div>   
     </ng-container>
-    
+
+ 
     <ng-container *ngIf="admin_Create_hotel.get('DistrictId') as districtControl">
-      <div [ngClass]="{'form-field col-lg-6': true}">
+      <div class="col-lg-6">  
         <label [ngStyle]="{'color':'white'}" for="district" class="control-label">District</label>
         <ng-select id="district" class="form-select"
           [searchable]="true"
@@ -138,9 +110,12 @@
         </span>
       </div>
     </ng-container>
+  </div> 
 
+
+  <div class="row mb-3">    
     <ng-container *ngIf="admin_Create_hotel.get('location') as locationControl">
-      <div [ngClass]="{'form-field col-lg-6': true}">
+      <div class="col-lg-6">     
         <label [ngStyle]="{'color':'white'}" for="location" class="control-label">Location</label>
         <input type="text" id="location" formControlName="location" class="form-control" placeholder="Enter location" />
         
@@ -149,36 +124,11 @@
               class="text-danger">
           Location is required.
         </span>
-      </div>
+      </div>   
     </ng-container>
-
-    <ng-container *ngIf="admin_Create_hotel.get('HotelFacilities') as facilitiesControl">
-      <div [ngClass]="{'form-field col-lg-6': true}">
-        <label [ngStyle]="{'color':'white'}" class="control-label">Hotel Facilities</label>
-        
-        <div *ngFor="let facility of hotel_facility_list">
-          <input
-          type="checkbox"
-          [value]="facility.hotelFacility_Id"  
-          (change)="onFacilityChange($event)"
-          [checked]="admin_Create_hotel.get('HotelFacilities')?.value.includes(facility.hotelFacility_Id)" 
-        />
-                 <!-- or use this  [checked]="facilitiesControl.value.includes(facility)" /> -->
-          <label [ngStyle]="{'color':'white'}">{{ facility.hotelFacilityName  }}</label>
-        </div>
-        
-        <span *ngIf="facilitiesControl.invalid && 
-                      (facilitiesControl.touched || facilitiesControl.dirty)" 
-              class="text-danger">
-          At least one facility is required.
-        </span>
-      </div>
-    </ng-container>
-    
-    
 
     <ng-container *ngIf="admin_Create_hotel.get('formFile') as hotelImageControl">
-      <div [ngClass]="{'form-field col-lg-6': true}">
+      <div class="col-lg-6">     
         <label [ngStyle]="{'color':'white'}" for="formFile" class="control-label">Hotel Image</label>
         <input type="file" id="formFile" formControlName="formFile" class="form-control" (change)="onFileChange($event)" value="file" />
         
@@ -187,9 +137,36 @@
               class="text-danger">
           Hotel image is required.
         </span>
-      </div>
-    </ng-container>    
+      </div> 
+    </ng-container>   
+  </div>    
+  
+ 
+  <ng-container *ngIf="admin_Create_hotel.get('HotelFacilities') as facilitiesControl">  
     
+      <label [ngStyle]="{'color':'white'}" class="control-label">Hotel Facilities</label>
+      <div class="d-flex flex-wrap  gap-3 mt-2">
+      <div *ngFor="let facility of hotel_facility_list">
+        <input
+        type="checkbox"
+        [value]="facility.hotelFacility_Id"  
+        (change)="onFacilityChange($event)"
+        [checked]="admin_Create_hotel.get('HotelFacilities')?.value.includes(facility.hotelFacility_Id)" 
+      />
+               <!-- or use this  [checked]="facilitiesControl.value.includes(facility)" /> -->
+        <label [ngStyle]="{'color':'white'}">{{ facility.hotelFacilityName  }}</label>
+      </div>
+
+      <span *ngIf="facilitiesControl.invalid && 
+                    (facilitiesControl.touched || facilitiesControl.dirty)" 
+            class="text-danger">
+        At least one facility is required.
+      </span>
+    </div>
+  
+  </ng-container>
+
+
     
 
   

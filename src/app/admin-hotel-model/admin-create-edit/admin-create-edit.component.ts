@@ -169,6 +169,7 @@ export class AdminCreateEditComponent implements OnInit {
   
 
   onSubmit() {
+    debugger;
     if (this.admin_Create_hotel.valid) {
       const formdata = new FormData();
 
@@ -187,13 +188,10 @@ export class AdminCreateEditComponent implements OnInit {
       if (fileInput) {
           formdata.append('formFile', fileInput); // Bind the file correctly
       }
-
-
       // Display the key/value pairs
       for (var [key, value] of (formdata as any).entries()) { 
         console.log(key, value);
-      }
-      
+      }    
  
 
       this.hotelService.create_Hotel(formdata).subscribe(
