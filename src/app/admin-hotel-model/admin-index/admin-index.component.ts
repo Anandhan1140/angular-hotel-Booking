@@ -12,6 +12,7 @@ import { AdminCreateEditComponent } from '../admin-create-edit/admin-create-edit
 export class AdminIndexComponent implements OnInit {
 
   isAdmin: boolean = false; // Property to store if the user is an admin
+  isUser : boolean 
   search_Form : FormGroup;
   cities: { id: number; name: string }[] = []; // Replace with your city model
   hotels :{id:number; name:string; cityId:number}[]=[]; // Example hotel model
@@ -73,6 +74,7 @@ export class AdminIndexComponent implements OnInit {
     debugger;
     const userRole = localStorage.getItem('userRole');
     this.isAdmin = userRole === 'Admin'; // Set isAdmin based on stored role
+    this.isUser = userRole == 'User';
 }
 
 

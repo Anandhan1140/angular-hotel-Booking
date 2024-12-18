@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
          // Set refresh token in cookie with options
          this._cookieService.set('refreshToken', res.refreshToken, { path: '/', secure: true, sameSite: 'Strict' });
           
-          const redirectUrl = res.userRole === 'Admin' ? '/admin-hotel-model' : '/customer-hotel-model';
+         const redirectUrl = '/admin-hotel-model';
           this.router.navigate([redirectUrl]);
         }
       },
