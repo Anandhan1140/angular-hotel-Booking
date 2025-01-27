@@ -1,7 +1,41 @@
 <nav>
     <ul class="navbar-nav">
+      <ng-container *ngIf="is_signedin">
+        <ng-container *ngIf="is_Admin">
+          <li class="nav-item mr-3">
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              (click)="openAdminModal()"
+            >
+              Add User
+            </button>
+          </li>
+        </ng-container>
+        <ng-template #regularUser>
+          <li class="nav-item mr-3">
+            <a
+              class="nav-link text-white"
+              routerLink="/user-profile"
+              title="Manage"
+            >
+              Hello, {{ userName }}!
+            </a>
+          </li>
+        </ng-template>
+        <li class="nav-item mr-3">
+          <button
+            type="button"
+            class="nav-link btn btn-link text-white"
+            (click)="logout()"
+          >
+            Logout &nbsp; <i class="fa-solid fa-right-to-bracket"></i>
+          </button>
+        </li>
+      </ng-container>  
 
-      <ng-container>
+ 
+      <ng-container *ngIf="!is_signedin">
         <li class="nav-item mr-3">
           <a class="nav-link text-white" routerLink="/register">Register</a>
         </li>
@@ -9,6 +43,7 @@
           <a class="nav-link text-white" routerLink="/login">Login</a>
         </li>
       </ng-container>
+    
     </ul>
 </nav>
   

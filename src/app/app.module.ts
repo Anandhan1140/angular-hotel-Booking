@@ -13,6 +13,7 @@ import { CustomerHotelModelModule } from './customer-hotel-model/customer-hotel-
 import { CookieService } from 'ngx-cookie-service';
 import {  AuthInterceptorService, httpInterceptorProviders } from 'src/services/auth.interceptor.service';
 import { HotelModelService } from 'src/services/hotel-model.service';
+import { IsSignedInGuard } from 'src/guards/is-signed-in.guard';
 
 
 
@@ -45,6 +46,7 @@ import { HotelModelService } from 'src/services/hotel-model.service';
      // AuthInterceptorService,
       CookieService,
       httpInterceptorProviders,
+      IsSignedInGuard,
   ],
   bootstrap: [AppComponent]
 })

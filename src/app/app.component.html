@@ -44,13 +44,18 @@
                             </li>
 
                    
-                            <li class="nav-item mr-3">
+                            <li class="nav-item mr-3" *ngIf="isAdmin">
                                 <a class="nav-link text-white">Customers</a>
                             </li>                     
 
                     </ul>               
                  
-                      <app-app-login-layout></app-app-login-layout> 
+                    <app-app-login-layout  
+                       [is_signedin]="is_signedin"
+                      [user_details]="user_details"
+                      (logoutEvent)="logout()"
+                      >
+                    </app-app-login-layout> 
                 </div>           
                   
             </div>
